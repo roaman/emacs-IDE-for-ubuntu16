@@ -144,23 +144,22 @@
 
 ;; Package: company
 ;; how include system header file ? that is todo!
-;; company-clang for system header and ggtags for project header ?
+;; company-clang for system header and ggtags for project header, semantic for system header
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 (delete 'company-semantic company-backends)
-;; (define-key c-mode-map  [(tab)] 'company-complete)
-;; (define-key c++-mode-map  [(tab)] 'company-complete)
-;; (define-key c++-mode-map  [(tab)] 'company-complete)
-;; (define-key c-mode-map  [(control tab)] 'company-complete)
-;; (define-key c++-mode-map  [(control tab)] 'company-complete)
 
 ;; company-c-headers
 (add-to-list 'company-backends 'company-c-headers)
+(define-key c-mode-map  [(tab)] 'company-complete)
+(define-key c++-mode-map  [(tab)] 'company-complete)
+;; (define-key c-mode-map  [(control tab)] 'company-complete)
+;; (define-key c++-mode-map  [(control tab)] 'company-complete)
 
 ;; GROUP: Programming -> Tools -> Fly-check
 ;; PACKAGE: flycheck
 ;; (require 'flycheck)
-;; (add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 
 ;;; compile and debug

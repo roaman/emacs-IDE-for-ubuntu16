@@ -19,4 +19,4 @@
 (require 'ede)
 (global-ede-mode)
 
-(provide 'setup-cedet)  
+(provide 'setup-cedet)

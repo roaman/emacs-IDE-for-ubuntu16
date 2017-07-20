@@ -31,6 +31,10 @@
     company
     company-c-headers
     ggtags
+    ;; IDE for python
+    ;; ein
+    elpy
+    py-autopep8
     ;; magit
     projectile
     sr-speedbar
@@ -74,9 +78,9 @@
 ;; develope
 (require 'setup-cedet)
 (require 'setup-development)
-(require 'setup-programming)
+(require 'setup-programming)            ;for C/C++  programming
 (require 'setup-ggtags)
 ;; (require 'setup-helm)
 ;; (require 'setup-helm-gtags)
-
-
+(require 'setup-programming-python)	    ;for python programming
+(require 'setup-org)                     ;for org-mode
