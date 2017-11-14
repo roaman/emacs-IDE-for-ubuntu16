@@ -36,6 +36,8 @@
     elpy
     py-autopep8
     ;; magit
+    ;; IDE for Assembly
+    nasm-mode
     projectile
     sr-speedbar
     ;; helm
@@ -83,4 +85,5 @@
 ;; (require 'setup-helm)
 ;; (require 'setup-helm-gtags)
 (require 'setup-programming-python)	    ;for python programming
+(require 'setup-programming-asm)        ;for assembly for nasm
 (require 'setup-org)                     ;for org-mode

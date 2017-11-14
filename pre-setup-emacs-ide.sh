@@ -17,6 +17,7 @@ sudo apt-get install aspell
 
 ### install ggtags  for ubuntu
 # 1. download the Global
+# https://www.gnu.org/software/global/download.html
 wget http://tamacom.com/global/global-6.5.7.tar.gz
 # 2. install dependency package
 sudo apt-get install gcc
