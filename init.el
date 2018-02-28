@@ -78,12 +78,23 @@
 ;; (require 'setup-local)
 ;; (require 'setup-help)
 ;; develope
-(require 'setup-cedet)
-(require 'setup-development)
-(require 'setup-programming)            ;for C/C++  programming
-(require 'setup-ggtags)
-;; (require 'setup-helm)
-;; (require 'setup-helm-gtags)
-(require 'setup-programming-python)	    ;for python programming
-(require 'setup-programming-asm)        ;for assembly for nasm
+(require 'setup-development)            ;for  any languages
+(require 'setup-programming)            ;for C/C++
+;; (require 'setup-ggtags)
+;; ;; (require 'setup-helm)
+;; ;; (require 'setup-helm-gtags)
+(require 'setup-programming-python)	    ;for python
+(require 'setup-programming-asm)        ;for assembly for nasm-mode,assembly
 (require 'setup-org)                     ;for org-mode
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

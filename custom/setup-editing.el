@@ -43,12 +43,31 @@
                                           newline-mark))
                             (whitespace-mode 1)))
 
+
 ;; ;; make text mode the default major mode
 ;; ;; and start auto-fill mode automatically each time you enter Emacs
 ;; (setq default-major-mode 'text-mode)
 ;; (add-hook 'text-mode-hook  'turn-on-auto-fill)
 ;; ;; or user refill-mode
 ;; ;;(add-hook 'text-mode-hook (lambda ( ) (refill-mode 1)))
+
+;;; Bellow setting depending on third package
+;;; ----------------------------------
+;; Package: volatile-highlights
+(require 'volatile-highlights)
+(volatile-highlights-mode t)
+
+;; Package: undo-tree
+;; (require 'undo-tree)
+;; (global-undo-tree-mode)
+
+;; PACKAGE: iedit
+(setq iedit-toggle-key-default nil)
+(require 'iedit)
+;; (global-set-key (kbd "C-;") 'iedit-mode)
+
+;; Package zygospore
+(global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
 
 
 ;;; Customized function
@@ -175,26 +194,45 @@ indent yanked text (with prefix arg don't indent)."
 
 (global-set-key (kbd "C-c i") 'indent-region-or-buffer)
 
+;; add duplicate line function from Prelude
+;; taken from prelude-core.el
+(defun prelude-get-positions-of-line-or-region ()
+    "Return positions (beg . end) of the current line
+or region."
+    (let (beg end)
+      (if (and mark-active (> (point) (mark)))
+          (exchange-point-and-mark))
+      (setq beg (line-beginning-position))
+      (if mark-active
+          (exchange-point-and-mark))
+      (setq end (line-end-position))
+      (cons beg end)))
 
-;;; Bellow setting depending on third package
-;;; ----------------------------------
+;; smart openline
+(defun prelude-smart-open-line (arg)
+    "Insert an empty line after the current line.
+Position the cursor at its beginning, according to the current mode.
+With a prefix ARG open line above the current line."
+    (interactive "P")
+    (if arg
+        (prelude-smart-open-line-above)
+      (progn
+        (move-end-of-line nil)
+        (newline-and-indent))))
 
-;; Package: volatile-highlights
-(require 'volatile-highlights)
-(volatile-highlights-mode t)
+(defun prelude-smart-open-line-above ()
+    "Insert an empty line above the current line.
+Position the cursor at it's beginning, according to the current mode."
+    (interactive)
+    (move-beginning-of-line nil)
+    (newline-and-indent)
+    (forward-line -1)
+    (indent-according-to-mode))
+
+(global-set-key (kbd "M-o") 'prelude-smart-open-line)
+(global-set-key (kbd "M-o") 'open-line)
 
 
-;; Package: undo-tree
-;; (require 'undo-tree)
-;; (global-undo-tree-mode)
-
-;; PACKAGE: iedit
-(setq iedit-toggle-key-default nil)
-(require 'iedit)
-;; (global-set-key (kbd "C-;") 'iedit-mode)
-
-;; Package zygospore
-(global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
 
 
 (provide 'setup-editing)

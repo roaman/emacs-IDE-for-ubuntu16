@@ -12,6 +12,5 @@
 (define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
 
 (define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
-(setq-local imenu-create-index-function #'ggtags-build-imenu-index)
 
 (provide 'setup-ggtags)
