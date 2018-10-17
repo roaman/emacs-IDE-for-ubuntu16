@@ -83,4 +83,5 @@
 ;; (require 'setup-helm)
 ;; (require 'setup-helm-gtags)
 (require 'setup-programming-python)	    ;for python programming
-(require 'setup-org)                     ;for org-mode
+
+;; (require 'setup-org)                     ;for org-mode

@@ -159,7 +159,7 @@
 ;; GROUP: Programming -> Tools -> Fly-check
 ;; PACKAGE: flycheck
 ;; (require 'flycheck)
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
 
 ;;; compile and debug

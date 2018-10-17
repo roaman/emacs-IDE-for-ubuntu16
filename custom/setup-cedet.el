@@ -5,6 +5,9 @@
 (global-semantic-idle-scheduler-mode 1)
 (global-semantic-stickyfunc-mode 1)
 
+;; if add other system include path, ex:
+;; (semantic-add-system-include "/usr/local/include")
+
 (semantic-mode 1)
 
 (defun alexott/cedet-hook ()

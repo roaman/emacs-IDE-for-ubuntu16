@@ -8,8 +8,13 @@ git config --global core.editor 'emacs -q'
 git config --global rerere.enabled true
 
 ### common part
-sudo apt-get install ttf-bitstream-vera
-#sudo apt-get install fonts-inconsolata
+##sudo apt-get install ttf-bitstream-vera
+##sudo apt-get install fonts-inconsolata
+##use Source code pro font
+## download from: https://github.com/adobe-fonts/source-code-pro/downloads
+## unzip SourceCodePro_FontsOnly-1.013.zip to /usr/share/fonts/truetype/
+fc-cache -f -v
+
 sudo apt-get install dbus-x11
 
 ### aspell
